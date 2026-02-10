@@ -1,13 +1,13 @@
 import { getUserIds, getData } from "./storage.js";
-// import { renderBookmarks } from "./display.js";
+import { renderBookmarks } from "./display.js";
 
 const userSelect = document.getElementById("select-user");
-const appContainer = document.getElementById("app");
+const userContainer = document.getElementById("user-container");
 const displayMessage = document.createElement("p");
 const container = document.getElementById("bookmarks-container");
 
 displayMessage.id = "status-message";
-appContainer.appendChild(displayMessage);
+userContainer.appendChild(displayMessage);
 
 /**
  * Initializes users selections dropdown
@@ -47,7 +47,7 @@ export function updateDisplay(userId) {
   displayMessage.textContent = "";
 
   if (!userId) {
-    displayMessage.textContent = `Please, select a user`;
+    displayMessage.textContent = `Please select a user`;
     if (container) container.innerHTML = "";
     return;
   }
@@ -59,6 +59,6 @@ export function updateDisplay(userId) {
     if (container) container.innerHTML = "";
     return;
   }
-  // renderBookmarks(userId);
+  renderBookmarks(userId);
   displayMessage.textContent = `Bookmarks for this user: ${bookmarkData.length}`;
 }

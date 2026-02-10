@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shared Bookmarks</title>
-    <script type="module" src="script.js" defer></script>
+    <script type="module" src="./src/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -19,6 +19,25 @@
           <option value="">--Select User--</option>
         </select>
       </section>
+      <!-- JS will render bookmark items here after a user is selected -->
+      <div id="bookmarks-container"></div>
+
+      <!-- Template for a single bookmark -->
+      <template id="bookmark-template">
+        <article>
+          <h3>
+            <a href="#" class="bookmark-title" target="_blank"></a>
+          </h3>
+          <p class="bookmark-description"></p>
+          <small class="bookmark-timestamp"></small>
+          <div class="actions">
+            <button class="copy-btn" data-url="#">Copy URL</button>
+            <button class="like-btn">
+              Likes: <span class="like-count">0</span>
+            </button>
+          </div>
+        </article>
+      </template>
     </main>
   </body>
 </html>
