@@ -1,39 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shared Bookmarks</title>
     <script type="module" src="src/script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Shared Bookmarks</h1>
+      <h1>Shared Bookmarks</h1>
     </header>
 
     <main id="app">
-        <!-- Content will be injected here -->
-         <section id="add-new-bookmark">
-            <h2>Add Bookmark</h2>
-            <form id="add-bookmark-form">
-                <div>
-                    <label for="bookmark-url">URL</label>
-                    <input id="bookmark-url" name="url" type="url" required/>
-                </div>
+      <!-- Content will be injected here -->
 
-                 <div>
-                    <label for="bookmark-title">Title</label>
-                    <input id="bookmark-title" name="title" type="text" required/>
-                </div>
+      <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Create a New Bookmark</h2>
 
-                 <div>
-                    <label for="bookmark-description">Description</label>
-                    <textarea  id="bookmark-description" name="description" type="description" required></textarea>
-                </div>
+        <form id="add-bookmark-form">
+          <fieldset>
+            <legend>Bookmark Details</legend>
+            <div class="field">
+              <label for="bookmark-url">URL</label>
+              <input id="bookmark-url" name="url" type="url" required />
+            </div>
 
-                <button type="submit">Add Bookmark</button>
-            </form>
-         </section>
+            <div class="field">
+              <label for="bookmark-title">Title</label>
+              <input id="bookmark-title" name="title" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="bookmark-description">Description</label>
+              <textarea
+                id="bookmark-description"
+                name="description"
+                placeholder="Add a short description"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit">Add Bookmark</button>
+          </fieldset>
+        </form>
+      </section>
     </main>
-</body>
+  </body>
 </html>
