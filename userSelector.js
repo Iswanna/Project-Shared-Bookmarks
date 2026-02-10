@@ -1,8 +1,10 @@
 import { getUserIds, getData } from "./storage.js";
+// import { renderBookmarks } from "./display.js";
 
 const userSelect = document.getElementById("select-user");
 const appContainer = document.getElementById("app");
 const displayMessage = document.createElement("p");
+const container = document.getElementById("bookmarks-container");
 
 displayMessage.id = "status-message";
 appContainer.appendChild(displayMessage);
@@ -37,7 +39,7 @@ export const initUser = () => {
 
 /**
  * Updates the UI based on selected users bookmark data
- * @param {string} userId 
+ * @param {string} userId
  * @returns {void}
  */
 
@@ -46,15 +48,17 @@ export function updateDisplay(userId) {
 
   if (!userId) {
     displayMessage.textContent = `Please, select a user`;
+    if (container) container.innerHTML = "";
     return;
   }
 
   const bookmarkData = getData(userId);
 
   if (!bookmarkData || bookmarkData.length === 0) {
-    displayMessage.textContent = `No bookmarks found for this user`;
+    displayMessage.textContent = `No bookmarks found for User ${userId}`;
+    if (container) container.innerHTML = "";
     return;
   }
-
+  // renderBookmarks(userId);
   displayMessage.textContent = `Bookmarks for this user: ${bookmarkData.length}`;
 }
