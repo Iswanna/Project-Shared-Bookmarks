@@ -1,6 +1,5 @@
 import { getData, setData } from "./storage.js"
 import { updateDisplay } from "./userSelector.js";
-// import { updateDisplay } from "./userSelect.js"
 
 /**
  * Initializes the new bookmark form logic
