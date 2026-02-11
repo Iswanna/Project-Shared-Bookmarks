@@ -33,13 +33,6 @@ export function renderBookmarks(userId) {
     titleLink.textContent = bookmark.title; // The text the user sees
     titleLink.href = bookmark.url; // The actual link
 
-    //Get the URL to be copied
-    const copyBtn = cloneTemplate.querySelector(".copy-btn");
-
-    copyBtn.addEventListener("click", () => {
-      copyToClipboard(bookmark.url, copyBtn);
-    });
-
     // Find the "Description Element" and fill it with data
     const descriptionElement = cloneTemplate.querySelector(
       ".bookmark-description",
@@ -52,7 +45,13 @@ export function renderBookmarks(userId) {
     // Convert the number into a human-readable string (like "10/02/2026, 14:30")
     const date = new Date(bookmark.createdAt);
     // Fill the timestamp element with data
-    timeStampElement.textContent = `Added on ${date.toLocaleString()}`;
+    timeStampElement.textContent = `Created at ${date.toLocaleString()}`;
+    //Get the URL to be copied
+    const copyBtn = cloneTemplate.querySelector(".copy-btn");
+
+    copyBtn.addEventListener("click", () => {
+      copyToClipboard(bookmark.url, copyBtn);
+    });
 
     // Append the clone to the container
     containerForBookmarks.appendChild(cloneTemplate);

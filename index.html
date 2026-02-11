@@ -38,6 +38,37 @@
           </div>
         </article>
       </template>
+
+      <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Create a New Bookmark</h2>
+
+        <form id="add-bookmark-form">
+          <fieldset>
+            <legend>Bookmark Details</legend>
+            <div class="field">
+              <label for="bookmark-url">URL</label>
+              <input id="bookmark-url" name="url" type="url" required />
+            </div>
+
+            <div class="field">
+              <label for="bookmark-title">Title</label>
+              <input id="bookmark-title" name="title" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="bookmark-description">Description</label>
+              <textarea
+                id="bookmark-description"
+                name="description"
+                placeholder="Add a short description"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit">Add Bookmark</button>
+          </fieldset>
+        </form>
+      </section>
     </main>
   </body>
 </html>
