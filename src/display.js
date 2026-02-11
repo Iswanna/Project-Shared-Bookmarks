@@ -1,5 +1,5 @@
 import { getData } from "./storage.js";
-import { handleLike } from "./likes.js";
+import { handleLike } from "./bookmark-likes.js";
 
 export function renderBookmarks(userId) {
   const containerForBookmarks = document.getElementById("bookmarks-container");
