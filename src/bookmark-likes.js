@@ -14,9 +14,9 @@ export function handleLike(userId, timestamp) {
   const updatedBookmarks = allBookmarks.map((bookmark) => {
     if (bookmark.createdAt === timestamp) {
       // Create a copy of the bookmark with incremented likes
-      return { 
-        ...bookmark, 
-        likes: (bookmark.likes || 0) + 1 
+      return {
+        ...bookmark,
+        likes: (bookmark.likes || 0) + 1,
       };
     }
     // Return unchanged if it doesn't match
