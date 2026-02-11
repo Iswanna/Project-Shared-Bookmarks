@@ -40,7 +40,7 @@ export function renderBookmarks(userId) {
         // Convert the number into a human-readable string (like "10/02/2026, 14:30")
         const date = new Date(bookmark.createdAt);
         // Fill the timestamp element with data
-        timeStampElement.textContent = `Added on ${date.toLocaleString()}`;
+        timeStampElement.textContent = `Created at ${date.toLocaleString()}`;
 
         // Append the clone to the container
         containerForBookmarks.appendChild(cloneTemplate);
