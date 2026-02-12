@@ -12,7 +12,7 @@ export function renderBookmarks(userId) {
 
   const bookmarksForOneUser = getData(userId);
 
-  // Handle emtpy or null state
+  // Handle empty or null state
   if (bookmarksForOneUser === null || bookmarksForOneUser.length === 0) {
     containerForBookmarks.textContent = "No bookmarks found";
     return; // Stop the function here
@@ -64,8 +64,6 @@ export function renderBookmarks(userId) {
       handleLike(userId, bookmark.createdAt);
     });
 
-    // Set up Copy Button placeholder (to help with Issue 6)
-    copyBtn.dataset.url = bookmark.url;
 
     // Append the clone to the container
     containerForBookmarks.appendChild(cloneTemplate);
