@@ -1,5 +1,6 @@
 import { getData } from "./storage.js";
 import { handleLike } from "./bookmark-likes.js";
+import { copyToClipboard } from "./copyToClipboard.js";
 
 export function renderBookmarks(userId) {
   const containerForBookmarks = document.getElementById("bookmarks-container");
@@ -46,6 +47,12 @@ export function renderBookmarks(userId) {
     const date = new Date(bookmark.createdAt);
     // Fill the timestamp element with data
     timeStampElement.textContent = `Created at ${date.toLocaleString()}`;
+    //Get the URL to be copied
+    const copyBtn = cloneTemplate.querySelector(".copy-btn");
+
+    copyBtn.addEventListener("click", () => {
+      copyToClipboard(bookmark.url, copyBtn);
+    });
 
     // Fill the Like Count (using || 0 as a fallback)
     const likeCountElement = cloneTemplate.querySelector(".like-count");
