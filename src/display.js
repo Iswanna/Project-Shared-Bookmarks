@@ -64,6 +64,7 @@ export function renderBookmarks(userId) {
       handleLike(userId, bookmark.createdAt);
     });
 
+
     // Append the clone to the container
     containerForBookmarks.appendChild(cloneTemplate);
   });
