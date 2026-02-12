@@ -1,0 +1,17 @@
+# Dependency directories (CRITICAL)
+node_modules/
+
+# Test coverage reports
+coverage/
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE settings (Optional, usually good to ignore)
+.vscode/
+.idea/
+
+# Local env files
+.env
+.env.local

@@ -1,4 +1,5 @@
 import { getData } from "./storage.js";
+import { handleLike } from "./bookmark-likes.js";
 import { copyToClipboard } from "./copyToClipboard.js";
 
 export function renderBookmarks(userId) {
@@ -52,6 +53,20 @@ export function renderBookmarks(userId) {
     copyBtn.addEventListener("click", () => {
       copyToClipboard(bookmark.url, copyBtn);
     });
+
+    // Fill the Like Count (using || 0 as a fallback)
+    const likeCountElement = cloneTemplate.querySelector(".like-count");
+    likeCountElement.textContent = bookmark.likes || 0;
+
+    // Set up the Like Button click event
+    const likeBtn = cloneTemplate.querySelector(".like-btn");
+    likeBtn.addEventListener("click", () => {
+      // This calls your new likes.js logic!
+      handleLike(userId, bookmark.createdAt);
+    });
+
+    // Set up Copy Button placeholder (to help with Issue 6)
+    copyBtn.dataset.url = bookmark.url;
 
     // Append the clone to the container
     containerForBookmarks.appendChild(cloneTemplate);
