@@ -24,6 +24,12 @@ This is a collaborative bookmarking application developed as part of the CodeYou
    ```
 4. Open `http://localhost:8080` in your browser.
 
+##Accessibility
+
+This project achieves a score of 100 for Accessibility in Google Lighthouse.
+
+![Lighthouse Accessibility score](docs/lighthouse-accessibility.png)
+
 ## 🧪 Testing
 
 - For unit test documentation, please see [TESTING.md](./TESTING.md).
