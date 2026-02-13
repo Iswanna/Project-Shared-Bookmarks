@@ -1,17 +1,15 @@
-/* --- Accessibility Variables & Theme --- */
 :root {
-  --bg-color: #0f172a; /* Dark Navy - Easy on the eyes */
-  --surface-color: #1e293b; /* Lighter Slate for cards/sections */
-  --text-primary: #f8fafc; /* High contrast off-white */
-  --text-secondary: #94a3b8; /* Muted gray for small text */
-  --accent: #818cf8; /* Accessible Indigo */
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #818cf8;
   --accent-hover: #a5b4fc;
-  --focus-ring: #facc15; /* High visibility Yellow for focus */
+  --focus-ring: #facc15;
   --error: #fb7185;
   --border: #334155;
 }
 
-/* --- Basic Reset --- */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,14 +32,11 @@ main {
   margin: 0 auto;
 }
 
-/* --- Accessibility: Focus States --- */
-/* Ensures keyboard users can see exactly where they are */
 :focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 4px;
 }
 
-/* --- Headers --- */
 h1 {
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -54,7 +49,6 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* --- Sections --- */
 section,
 fieldset {
   background-color: var(--surface-color);
@@ -64,7 +58,6 @@ fieldset {
   margin-bottom: 2rem;
 }
 
-/* --- User Selector & Status Message --- */
 #user-container {
   display: flex;
   flex-direction: column;
@@ -87,7 +80,6 @@ select {
   margin-top: 0.5rem;
 }
 
-/* --- Bookmark Cards --- */
 #bookmarks-container {
   display: flex;
   flex-direction: column;
@@ -124,7 +116,6 @@ article {
   margin-bottom: 1rem;
 }
 
-/* --- Buttons (Touch Target Sizes) --- */
 .actions {
   display: flex;
   gap: 0.75rem;
@@ -132,7 +123,7 @@ article {
 }
 
 button {
-  min-height: 48px; /* Accessibility: Minimum tap target size */
+  min-height: 48px;
   min-width: 48px;
   padding: 0 1.25rem;
   cursor: pointer;
@@ -150,7 +141,7 @@ button:hover {
 
 button[type="submit"] {
   background-color: var(--accent);
-  color: var(--bg-color); /* Dark text on light bg for contrast */
+  color: var(--bg-color);
   width: 100%;
   margin-top: 1rem;
   border: none;
@@ -160,7 +151,6 @@ button[type="submit"]:hover {
   background-color: var(--accent-hover);
 }
 
-/* --- Form Styling --- */
 legend {
   font-weight: bold;
   color: var(--accent);
@@ -193,7 +183,6 @@ textarea {
   resize: vertical;
 }
 
-/* Support for the "Copied!" feedback state */
 button:disabled {
   opacity: 0.7;
   cursor: not-allowed;

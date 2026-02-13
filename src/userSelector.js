@@ -7,6 +7,8 @@ const displayMessage = document.createElement("p");
 const container = document.getElementById("bookmarks-container");
 
 displayMessage.id = "status-message";
+displayMessage.setAttribute("role", "status");
+displayMessage.setAttribute("aria-live", "polite");
 userContainer.appendChild(displayMessage);
 
 /**

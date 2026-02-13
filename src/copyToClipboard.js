@@ -24,4 +24,3 @@ export const copyToClipboard = async (url, copyButton) => {
     alert(`Failed to copy to clipboard`);
   }
 };
-
