@@ -4,7 +4,7 @@ This is a collaborative bookmarking application developed as part of the CodeYou
 
 ## 🚀 Live Site
 
-[Click here to view the deployed website](https://cyf-iswat-bello-iswanna-bookmarks.netlify.app/)
+[Click here to view the deployed website](https://cyf-shared-bookmarks-iswat-and-chioma.netlify.app/)
 
 ## 🛠 Tech Stack
 
